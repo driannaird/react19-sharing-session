@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: cursive, Helvetica, sans-serif;
+}
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+}
+
+@layer components {
+  .bodygoals {
+    @apply bg-[url("/sky.jpg")] bg-cover bg-no-repeat h-screen flex items-center justify-center;
+  }
+  .wrapper {
+    @apply w-[500px] p-4 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-0 border border-gray-100;
+  }
+  .space {
+    @apply rounded-[4px] p-2;
+  }
+  .title {
+    @apply text-3xl text-center mb-4 font-bold text-white;
+  }
+  .form-action {
+    @apply flex w-full;
+  }
+  .input {
+    @apply flex-grow rounded-[4px] p-2 bg-white border border-gray-100;
+  }
+  .button {
+    @apply ml-2 rounded-[4px] p-2 bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 border border-gray-100;
+  }
+  .message-thread {
+    @apply text-white p-2 mb-2 rounded-lg shadow-md;
+  }
 }
